@@ -1,25 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Live Arrow</title>
-    <link rel="icon" href="images/logo.png" sizes="16x16" />
-    <!-- CSS Link -->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livearrow - Snickers Shoes Store BD</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
     <!-- Header -->
     <header>
-      <a href="index.html">
-        <img alt="Live Arrow Logo" class="logo" src="images/logo.png" />
-      </a>
+        <div class="logo">
+          <img src="images/logo.png" alt="Live Arrow">
+        </div>
+        
+        <nav class="navbar">
+          <ul class="nav-links">
+              <li><a href="#ho">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+          </ul>
+          <!-- Hamburger Menu Icon for Mobile -->
+          <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+      </nav>
+
+      
     </header>
 
-    <!-- Banner Section -->
+    <!--WhatsApp Contact Link-->
+    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-link">
+      <img src="images/WhatsApp-Icon.png" alt="WhatsApp Chat">
+      <span>Contact Us</span>
+  </a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/Hero.jpeg" alt="Featured Snickers" class="hero-image">
+        <h1>Your Next Pair of Snickers Awaits!</h1>
+        <a href="#products" class="shop-now-btn">Shop Now</a>
+    </section>
 
-    <img class="banner" src="images/new.jpg" alt="Live Arrow" />
-  
-  
+    <!-- Product Gallery 
+    <section id="products" class="product-gallery">
+        <h2>Our Collection</h2>
+        <div class="product-grid">
+            <!-- Product Card Example 
+            <div class="product-card">
+                <img src="product1.jpg" alt="Snickers Model 1" class="product-image">
+                <h3 class="product-name">Snickers Model 1</h3>
+                <p class="product-price">$99.99</p>
+            </div>
+            <!-- Repeat .product-card for more products 
+        </div>
+    </section>  -->
+          
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Livearrow. All Rights Reserved.</p>
+        <a href="https://wa.me/1234567890" target="_blank">Contact Us on WhatsApp</a>
+    </footer>
+
+    
+
+
+<!--JS For Mobile Nav Humberger Clickable -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburger.addEventListener("click", function() {
+          navLinks.classList.toggle("active");
+      });
+  });
+</script>
+
+  <!--JS For Mobile Nav Humberger Clickable -->
+
   </body>
 </html>
