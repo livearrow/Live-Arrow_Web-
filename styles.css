@@ -147,14 +147,30 @@ header {
 }
 
 /* Product Gallery Styles */
-.product-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-    gap: 20px; /* Space between product cards */
-    padding: 20px;
-    margin: 0 auto; /* Center-align the grid */
-    max-width: 1200px; /* Set a maximum width for the gallery */
+
+/* Gallery Heading */
+.gallery-heading {
+    text-align: center; /* Center-align the text */
+    font-size: 2rem; /* Adjust font size */
+    color: #333; /* Choose a suitable color */
+    margin-bottom: 20px; /* Add space below the heading */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    width: 100%; /* Ensure the heading spans the full width of its container */
 }
+
+.product-gallery {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: flex-start; /* Align items at the top */
+    width: 100%; /* Ensure it spans the full width */
+    margin: 0 auto; /* Center the container itself on the page */
+    padding: 20px; /* Optional padding for spacing */
+}
+
+
 
 /* Individual Product Card */
 .product-card {
