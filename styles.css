@@ -1,3 +1,4 @@
+
 /* Reset some basic styles */
 * {
     margin: 0;
@@ -148,78 +149,84 @@ header {
 
 /* Product Gallery Styles */
 
-/* Gallery Heading */
-.gallery-heading {
-    text-align: center; /* Center-align the text */
-    font-size: 2rem; /* Adjust font size */
-    color: #333; /* Choose a suitable color */
-    margin-bottom: 20px; /* Add space below the heading */
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    width: 100%; /* Ensure the heading spans the full width of its container */
-}
-
+/* Product Gallery Section */
 .product-gallery {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: flex-start; /* Align items at the top */
-    width: 100%; /* Ensure it spans the full width */
-    margin: 0 auto; /* Center the container itself on the page */
-    padding: 20px; /* Optional padding for spacing */
+    position: relative;
+    display: grid;
+    gap: 1.5rem;
+    padding: 3rem 2rem; /* Increased padding to give space for the heading */
+    margin-top: 2rem; /* Optional: Adds more space from other sections */
+}
+
+/* Updated Heading Styles */
+.gallery-heading {
+    text-align: center; /* Center the text */
+    font-size: 2rem; /* Larger font size for better visibility */
+    font-weight: bold; /* Make it bold */
+    color: #333; /* Dark text color */
+    margin: 2rem 0; /* Add spacing above and below */
 }
 
 
 
-/* Individual Product Card */
+/* Desktop View: Row-by-Row Layout */
+@media (min-width: 768px) {
+    .product-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Mobile View: Column Layout */
+@media (max-width: 767px) {
+    .product-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Product Card Styles */
 .product-card {
-    background-color: #fff; /* White background for the card */
-    border: 1px solid #ddd; /* Light border for separation */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    overflow: hidden; /* Clip content to border radius */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensure cards are uniform in height */
 }
 
-.product-card:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-}
-
-/* Product Image */
+/* Product Image Styles - Uniform Size */
 .product-image {
-    width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Ensure images cover the area without distortion */
-    border-bottom: 1px solid #ddd; /* Separate image from text */
+    width: 100%; /* Makes the image responsive */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Ensures image is cropped neatly to fit the area */
+    border-radius: 4px; /* Optional: Rounded corners for a modern look */
+    margin-bottom: 1rem;
 }
 
-/* Product Name */
+
+/* Product Name and Price */
 .product-name {
-    font-size: 1.2rem; /* Slightly larger text */
+    font-size: 1.1rem;
     font-weight: bold;
-    color: #333; /* Dark text for good readability */
-    margin: 10px 15px 5px;
-    text-align: center;
-}
-/* Product Grade */
-.product-grade {
-    font-size: 1rem;
-    color: #666; /* Gray color for subtle emphasis */
-    margin: 5px 0;
-    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
-
-/* Product Price */
 .product-price {
     font-size: 1rem;
-    color: #007BFF; /* Accent color for the price */
-    font-weight: bold;
-    margin: 5px 15px 15px;
-    text-align: center;
+    color: #555;
 }
+
+/* Hover Effect */
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Footer Styles */
 footer {
@@ -251,8 +258,9 @@ footer {
 }
 
 .social-link:hover {
-    color: #007BFF; /* Highlight color on hover */
+    color: #6ab2ff; /* Highlight color on hover */
 }
+
 
 
 /* CSS for About US page */
