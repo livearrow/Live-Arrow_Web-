@@ -34,11 +34,14 @@ jobs:
         sed -i '$ s/,$//' $JSON_FILE # Remove trailing comma from last item
         echo "]" >> $JSON_FILE
 
+    - name: Commit Changes
+      run: |
+        git add products.json
+        git commit -m "Auto-update products.json" || echo "No changes to commit"
+
     - name: Pull Latest Changes
       run: git pull origin main --rebase
 
-    - name: Commit and Push Changes
+    - name: Push Changes
       run: |
-        git add products.json
-        git commit -m "Auto-update products.json"
         git push origin main
