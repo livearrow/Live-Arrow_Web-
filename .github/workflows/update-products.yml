@@ -1,9 +1,9 @@
-name: Update Products JSON
+name: Auto-update products.json
 
 on:
   push:
     paths:
-      - product-images/**
+      - "product-images/*"
 
 jobs:
   update-json:
@@ -12,21 +12,33 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set Git Config
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
 
     - name: Generate products.json
       run: |
-        echo "[" > products.json
-        for file in product-images/*; do
-          filename=$(basename "$file")
-          echo "  \"$filename\"," >> products.json
+        IMAGES_DIR="product-images"
+        JSON_FILE="products.json"
+        echo "[" > $JSON_FILE
+        for file in $IMAGES_DIR/*; do
+          if [[ $file == *.jpg || $file == *.png ]]; then
+            filename=$(basename -- "$file")
+            echo "\"$filename\"," >> $JSON_FILE
+          fi
         done
-        sed -i '$ s/,$//' products.json # Remove last comma
-        echo "]" >> products.json
+        sed -i '$ s/,$//' $JSON_FILE # Remove trailing comma from last item
+        echo "]" >> $JSON_FILE
 
-    - name: Commit Updated JSON
+    - name: Pull Latest Changes
+      run: git pull origin main --rebase
+
+    - name: Commit and Push Changes
       run: |
-        git config user.name "GitHub Actions Bot"
-        git config user.email "actions@github.com"
         git add products.json
         git commit -m "Auto-update products.json"
-        git push
+        git push origin main
