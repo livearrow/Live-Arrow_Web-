@@ -6,9 +6,9 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: #333;
+    font-family: 'Montserrat', sans-serif;
 }
+
 
 /* Header */
 header {
@@ -283,4 +283,109 @@ footer {
 }
 
 
-/* CSS for About US page */
+/******** CSS for Contact US page **************/
+
+/* Contact Hero Section */
+.contact-hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f3f3f3;
+}
+
+.contact-hero h1 {
+    font-size: 32px;
+    color: #333;
+}
+
+.contact-hero p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Contact Content */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-details {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-details h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.contact-details p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Contact Form */
+.contact-form {
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-form label {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* Footer (repositioning WhatsApp link) */
+footer {
+    position: relative;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.whatsapp-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
