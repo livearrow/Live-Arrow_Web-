@@ -12,14 +12,11 @@
         .then(response => response.json())
         .then(products => {
             const gallery = document.querySelector(".product-gallery"); // Select the product gallery container
-            
-            
-            
+         
             // Loop through images and generate product cards
             products.forEach(product => {
                 // Match: Name_Grade x-y_৳price.extension
-                
-                
+
                 const name = product.Name
                 const grade = product.Grade
                 const price = `৳${product.Price}`; // Extract and format price
